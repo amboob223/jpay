@@ -15,7 +15,7 @@ reg
 
 
             wen we incoportate the blochain people will be able to trust 
-        databases
+        3 databases
             - one for the network we let people who need to send bags sign up these are usrs
                     -we need they 
                                 name, 
@@ -39,6 +39,8 @@ reg
                             payment
                             GRADE
                       an they too can leave a review which goes into the grading ssystem
+
+            
 
 
 
