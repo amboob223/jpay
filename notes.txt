@@ -1,3 +1,44 @@
 8 + 9 + 8 + 30 + 9 = 64 * 32 = 2048
 reg 
     60*32=1920 = 
+
+    this app will
+        ?
+        from my understanding martin said he has a network of travelers that contacts him
+        and then from that network he is able to organize a trip going and comming from bju to alt
+        we have to verify that there is nothing illegal in the bag. 
+        have the legal owners  infomation and have it virifed by the company
+        have the traveler declare before crossing secriuty
+        have a way for the people to collect there bag and a system in place if they do not 
+        collect the bag in time
+        we meed a way to verify the weight 
+
+
+            wen we incoportate the blochain people will be able to trust 
+        databases
+            - one for the network we let people who need to send bags sign up these are usrs
+                    -we need they 
+                                name, 
+                                phone,
+                                bag,
+                                photo,
+                                address,
+                                origin
+                                destination,
+                                cost
+                                GRADE
+                    the travelers for the usrs are generatred but can be chosen for a premium 
+                    -we have a grade system after the run which is like a way to reveiw and make each other trust
+                    -we can use this until 
+            - we need a db for travelers 
+                    - we need the 
+                            name 
+                            the pickup
+                            and drop off location ,
+                            phone,
+                            payment
+                            GRADE
+                      an they too can leave a review which goes into the grading ssystem
+
+
+
