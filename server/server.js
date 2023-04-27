@@ -34,8 +34,40 @@ app.use(session({
 const saltRounds = 10;
 
 const storage = multer.diskStorage({
-    destination: (null, "/images", cb),
-    filename: (null, cb)
+    destination: (req, file, cb) => {
+        cb(null, 'images/')
+    },
+    filename: (req, file, cb) => {
+        console.log(file)
+        cb(null, Date.now() + path.extname(file.originalname))
+    }
+})
+
+const upload = multer({ storage: storage })
+app.set("view engine", "ejs");
+
+app.post("/upload", upload.single("image"), (req, res) => {
+    res.send("Image uploaded")
+})
+
+
+app.post("/register", (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    bcrypt.hash(password, saltRounds, (err, hash) => {
+        if (err) {
+            console.log(err)
+        }
+
+        pool.query(
+            "INSERT INTO users (username,password) VALUES (?,?)",
+            [username, hash],
+            (err, result) => {
+                console.log(err);
+            }
+        )
+    })
 })
 
 app.post("/login", (req, res) => {
@@ -46,9 +78,11 @@ app.post("/login", (req, res) => {
         "SELECT * FROM logins WHERE username = ?",
         username,
         (err, result) => {
+
             if (err) {
                 res.send({ err: err })
             }
+
             if (result.length > 0) {
                 bcrypt.compare(password, result[0].password, (error, response) => {
                     if (response) {
@@ -59,9 +93,15 @@ app.post("/login", (req, res) => {
                         res.send({ message: "wrongg username" })
                     }
                 })
+            } else {
+                res.send({ message: "user dont exist" })
             }
         }
     )
+})
+
+app.listen(3001, () => {
+    console.log("3002 pount")
 })
 
 // app.post("/jpay",())
