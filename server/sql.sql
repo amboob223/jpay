@@ -25,4 +25,4 @@ CREATE TABLE logins(
     id SERIAL PRIMARY KEY,
     username VARCHAR (255),
     password BYTEA
-)
+);
