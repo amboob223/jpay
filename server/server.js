@@ -12,9 +12,10 @@ const pool = require("./db");
 //middleware 
 app.use(express.json());
 app.use(cors({
-    origin: ["localhost:3000/jpay"],
+    origin: "http://localhost:3000",
     methods: ["POST", "GET"],
-    credentials: true
+    credentials: true,
+    headers: "Content-type"
 }));
 
 
@@ -88,7 +89,7 @@ app.post("/login", (req, res) => {
                     if (response) {
                         req.session.user = result
                         console.log(req.session.user)
-                        req.send(result)
+                        res.send(result)
                     } else {
                         res.send({ message: "wrongg username" })
                     }
